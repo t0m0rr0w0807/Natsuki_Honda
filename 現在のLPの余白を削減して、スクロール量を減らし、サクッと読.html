@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light" style=""><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本田夏樹 | 覚悟形成</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <style>
+      :root {
+        --primary: #00bcd4;
+        --primary-dark: #0097a7;
+        --dark-bg: #111111;
+        --light-bg: #f5f7fa;
+        --text-main: #333333;
+        --text-white: #ffffff;
+      }
+
+      body {
+        font-family: 'Noto Sans JP', sans-serif;
+        color: var(--text-main);
+        line-height: 1.8; /* 行間 1.8 */
+        margin: 0;
+        padding: 0;
+        background-color: #fff;
+        max-width: 100%;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* コンテナ設定（スマホ最適化） */
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 0;
+        position: relative;
+      }
+
+      /* 共通セクション設定 - 余白 40px 20px */
+      section {
+        padding: 40px 20px;
+        border-bottom: 1px solid #eee;
+      }
+
+      h1 {
+        font-size: 1.4rem;
+        font-weight: 900;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+        text-align: center;
+        color: #111;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 1.2rem;
+        text-align: center;
+        line-height: 1.5;
+        color: #222;
+      }
+
+      h3 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 0.8rem;
+        line-height: 1.5;
+      }
+
+      p {
+        margin-bottom: 1.2rem;
+        font-size: 0.95rem;
+        line-height: 1.8;
+        color: #444;
+      }
+
+      .text-small {
+        font-size: 0.85rem;
+      }
+
+      /* 1. Stickyバナー */
+      .sticky-banner {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: linear-gradient(90deg, #000, #00bcd4);
+        color: white;
+        padding: 12px 15px;
+        text-align: center;
+        font-size: 0.85rem;
+        font-weight: 700;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        line-height: 1.5;
+      }
+
+      /* 2. 動画セクション */
+      .video-section {
+        background-color: #000;
+        color: white;
+        text-align: center;
+        padding: 30px 20px;
+      }
+      .video-placeholder {
+        width: 100%;
+        aspect-ratio: 16/9;
+        background-color: #222;
+        border: 2px solid var(--primary);
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 12px;
+      }
+      .video-desc {
+        font-size: 0.85rem;
+        color: #fff;
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      /* 3. ファーストビュー */
+      .hero {
+        background-color: #fff;
+        text-align: center;
+        padding: 50px 20px;
+      }
+
+      /* 4. ストーリー */
+      .story-section {
+        background-color: var(--dark-bg);
+        color: white;
+        border-bottom: none;
+      }
+      .profile-img-placeholder {
+        width: 100px;
+        height: 100px;
+        background-color: #333;
+        border-radius: 50%;
+        margin: 0 auto 1.5rem;
+        border: 2px solid var(--primary);
+      }
+      .story-text {
+        font-size: 0.95rem;
+        color: #e8e8e8;
+        line-height: 1.8;
+      }
+      .story-text p {
+        color: #e8e8e8;
+      }
+      .story-text h3 {
+        color: white;
+        margin-top: 1.5rem;
+      }
+
+      /* 5. 実績 */
+      .results-section {
+        background: linear-gradient(135deg, #111 0%, #002e33 100%);
+        color: white;
+        border-bottom: none;
+      }
+
+      /* Grid Layout for Results */
+      .results-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 12px;
+        margin-bottom: 1.5rem;
+      }
+
+      .result-card {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 15px 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .result-card h3 {
+        color: white;
+        font-size: 0.9rem; /* 少し小さめに調整 */
+        font-weight: 700;
+        margin-bottom: 0.8rem;
+        line-height: 1.4;
+        text-align: center;
+      }
+
+      .result-meta {
+        font-size: 0.75rem;
+        color: #999;
+        margin-bottom: 8px;
+        text-align: center;
+        display: block;
+      }
+
+      .result-card img {
+        width: 100%;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      .result-card ul {
+        font-size: 0.75rem;
+        line-height: 1.6;
+        color: #e8e8e8;
+        margin: 0;
+        padding-left: 1.2em;
+        text-align: left;
+      }
+
+      /* 6. 向いている人/向いていない人 */
+      .target-section {
+        background-color: var(--light-bg);
+      }
+      .comparison-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        font-size: 0.85rem;
+      }
+      .target-col {
+        background: white;
+        padding: 18px;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      }
+      .target-col h3 {
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 10px;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 5px;
+      }
+      .col-bad h3 {
+        color: #999;
+      }
+      .col-good h3 {
+        color: var(--primary);
+      }
+      .check-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .check-list li {
+        margin-bottom: 8px;
+        padding-left: 1.2em;
+        position: relative;
+        line-height: 1.5;
+        list-style-type: none;
+      }
+      .col-bad .check-list li::before {
+        content: '×';
+        color: #999;
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+        font-size: 1rem;
+      }
+      .col-good .check-list li::before {
+        content: '✓';
+        color: var(--primary);
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+        font-size: 1rem;
+      }
+
+      /* 7. 問題の本質 */
+      .problem-section {
+        text-align: center;
+        background: #fff;
+      }
+      .problem-box {
+        background: #f9f9f9;
+        padding: 24px;
+        border-left: 5px solid var(--primary);
+        text-align: left;
+        margin-top: 1.5rem;
+        border-radius: 4px;
+      }
+
+      /* 8. 解決の方向性 */
+      .solution-section {
+        background-color: #fff;
+        text-align: center;
+      }
+
+      /* 9. Offer Section */
+      .offer-section {
+        background-color: var(--light-bg);
+        text-align: center;
+      }
+      .offer-box {
+        border: 2px solid #333;
+        padding: 24px;
+        background: white;
+        margin-top: 1.2rem;
+        border-radius: 8px;
+      }
+
+      /* 10. CTA Section */
+      .cta-section {
+        padding: 40px 20px 60px;
+        text-align: center;
+        background-color: #fff;
+      }
+      .cta-title {
+        font-weight: bold;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        color: #111;
+      }
+      .btn-cta {
+        display: block;
+        width: 100%;
+        background-color: var(--primary);
+        color: white;
+        font-weight: 700;
+        font-size: 1.1rem;
+        padding: 18px;
+        border-radius: 5px;
+        text-decoration: none;
+        box-shadow: 0 4px 0 var(--primary-dark);
+        transition: none;
+        border: none;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+      }
+      .cta-sub {
+        font-size: 0.8rem;
+        color: #666;
+        margin-bottom: 0.5rem;
+        line-height: 1.5;
+      }
+
+      /* Utility */
+      .text-primary {
+        color: var(--primary);
+      }
+      .text-center {
+        text-align: center;
+      }
+      .mt-0 {
+        margin-top: 0;
+      }
+      .mb-0 {
+        margin-bottom: 0;
+      }
+
+      hr {
+        margin: 1.5rem 0;
+        border: none;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .story-section hr {
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      strong {
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body style="">
+    <div class="container">
+      <!-- 1. Sticky Banner -->
+      <div class="sticky-banner"><span style="font-size: 0.85rem; -webkit-tap-highlight-color: transparent; -webkit-text-size-adjust: 100%; color: rgb(244, 218, 88);">朝の自己規律と健康習慣で人生を整える</span></div>
+
+      <!-- 2. Video Section -->
+      <div class="video-section">
+        <div class="video-placeholder">
+          <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/4WF4vdE0oTI?rel=0&amp;modestbranding=1&amp;playsinline=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" style="display: block">
+          </iframe>
+        </div>
+        <p class="video-desc">
+          この動画では、僕がどんな想いで、<br>
+          どんな人と向き合っているのかを話しています。
+        </p>
+      </div>
+
+      <!-- 3. ファーストビュー -->
+      <section class="hero">
+        <h1 style="font-size: 18px;">
+          「やると決めたのに、またできなかった」&nbsp;</h1><h1 style="font-size: 18px;">&nbsp;そんな経験ありませんか？
+        </h1>
+      </section>
+
+      <!-- 4. Story Section -->
+      <section class="story-section">
+        <div class="profile-img-placeholder"></div>
+        <h2 style="color: white; font-size: 20px;">僕も、自己規律と健康習慣が乱れていました</h2>
+        <div class="story-text">
+          <p>
+            僕もかつては、<br>
+            <strong>「変わりたいのに続かない」</strong>人間でした。
+          </p>
+          <p>
+            今日こそは、と思ってもできない。<br>
+            そんな自分に、だんだん期待しなくなっていく。<br>
+            今思えば、完全に自分を諦めかけていたと思います。
+          </p>
+
+          <hr>
+
+          <h3>人生が止まったように感じた時期</h3>
+          <p>
+            数年前、体調を崩したことをきっかけに、<br>
+            生活が一気に崩れた時期がありました。
+          </p>
+          <p>
+            その時に強く残ったのが、<br>
+            <strong>「どうせ自分は続かない」</strong>という感覚でした。
+          </p>
+
+          <hr>
+
+          <h3>きっかけは、意外と小さなことでした</h3>
+          <p>
+            そこから僕を立て直したのは、<br>
+            大きな決断でも、気合でもありません。
+          </p>
+          <p class="mb-0">
+            <strong>朝の小さな行動を積み重ねたこと。</strong><br>
+            それがすべての始まりでした。
+          </p>
+        </div>
+      </section>
+
+      <!-- 5. Results Section -->
+      <section class="results-section">
+        <h2 style="color: white">「現実」が変わった実績</h2>
+
+        <div class="results-grid">
+          <!-- ビジネス -->
+          <div class="result-card">
+            <span class="result-meta">28歳｜自営業</span>
+            <h3 style="font-size: 12px;">月商140万→450万</h3>
+            <img src="https://www.genspark.ai/api/files/s/S0I0Abun" alt="実績1" data-height-listener-added="true">
+            <ul>
+              <li style="font-size: 12px;">やると決めても続かず、売上が安定しなかった</li>
+              <li style="font-size: 12px;">生活を整えたことで、月商は3倍以上に</li>
+            </ul>
+          </div>
+
+          <!-- 仕事 -->
+          <div class="result-card">
+            <span class="result-meta">24歳｜営業職</span>
+            <h3 style="font-size: 12px;">営業成績：社内真ん中→123人中1位</h3>
+            <img src="https://www.genspark.ai/api/files/s/lMlHSviy" alt="実績2" data-height-listener-added="true">
+            <ul>
+              <li style="font-size: 12px;">営業成果が出ず、自信を失いかけていた</li>
+              <li style="font-size: 12px;">朝ジムの習慣化で、毎日の基準が変わった</li>
+            </ul>
+          </div>
+
+          <!-- 恋愛 -->
+          <div class="result-card">
+            <span class="result-meta">33歳｜公務員</span>
+            <h3 style="font-size: 12px;">6年半彼女なし→スピード婚</h3>
+            <img src="https://www.genspark.ai/api/files/s/EJ6ZtWy3" alt="実績3" data-height-listener-added="true">
+            <ul>
+              <li style="font-size: 12px;">長い間、恋愛に自信が持てない状態だった</li>
+              <li style="font-size: 12px;">生活習慣の改善により、自然体でいられるようになった</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Target Section -->
+      <section class="target-section">
+        <h2>実際に変化が生まれた人たちには、</h2><h2>共通点がありました</h2>
+        <p class="text-center" style="font-size: 12px;">
+          このプログラムは、誰にでも合うものではありません。&nbsp;</p><p class="text-center" style="font-size: 12px;">&nbsp;ですが、以下に当てはまる方は、これまで多くの変化を感じています。
+        </p>
+        <div class="comparison-grid">
+          <div class="target-col col-bad">
+            <h3>向いていない人</h3>
+            <ul class="check-list">
+              <li style="font-size: 14px;">楽をして劇的に変わりたい人</li>
+              <li style="font-size: 14px;">誰かに人生を変えてもらいたい人</li>
+              <li style="font-size: 14px;">今はまだ本気で変わろうと思えていない人</li>
+            </ul>
+          </div>
+          <div class="target-col col-good">
+            <h3>向いている人</h3>
+            <ul class="check-list">
+              <li style="font-size: 14px;"><strong>「このままは嫌だ」</strong>と、どこかで感じている人</li>
+              <li style="font-size: 14px;">完璧じゃなくてもいいから、まず<strong>動いてみたい</strong>人</li>
+              <li style="font-size: 14px;">本気で<strong>変わりたい</strong>と思っている人</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Problem Section -->
+      <section class="problem-section">
+        <h2>なぜ、行動が続かないのか？</h2>
+        <p>
+          それは、能力が低いからでも、<br>
+          気合いが足りないからでもありません。
+        </p>
+        <div class="problem-box">
+          <p class="mb-0">
+            <strong>本当の原因は、<span style="color: var(--primary-dark)">朝の時点で主導権を失っていること</span>です</strong>
+          </p>
+          <br>
+          <p class="mb-0">
+            目覚ましを止める。スマホを触る。<br>
+            気づけば時間に追われて一日が始まる。
+          </p>
+          <br>
+          <p class="mb-0">
+            その小さな<strong>「負け」</strong>が、<br>
+            自分でも気付かないうちに積み重なっていきます。
+          </p>
+          <br>
+          <p class="mb-0">
+            そして、いつの間にか、<br>
+            <strong>「どうせ自分は続かない」</strong><br>
+            という自己イメージができあがってしまうのです。
+          </p>
+          <br>
+          <p class="mb-0">
+            <strong>でも、朝の始め方を変えれば立て直せます。</strong>
+          </p>
+        </div>
+      </section>
+
+      <!-- 8. Solution Section -->
+      <section class="solution-section">
+        <h2>劇的なことは必要ありません</h2>
+        <p>
+          必要なのは、強い意志ではありません。</p><p>
+          <strong>朝の最初の30分を整えること。</strong>
+        </p>
+        <p>
+          目覚ましで起きる。スマホを触る前に一つだけ決めた行動をする。<br>
+          身体を動かす。水を飲む。外に出る。<br>
+          —— それだけです。
+        </p>
+        <br>
+        <p>
+          その小さな「勝ち」が積み重なると、</p><p>
+          <strong>「自分はやれる」</strong>という感覚が戻ってきます。
+        </p>
+
+        <p style="margin-top: 1.5rem; font-weight: 500">
+          自己信頼は、言葉ではなく、<br>
+          <strong>行動の証拠</strong>からしか生まれません。
+        </p>
+
+        <hr style="margin: 2rem 0; border-top: 2px solid #ddd">
+
+        <p style="font-size: 16px; font-weight: 500;">
+          <strong>朝の自己規律と健康習慣</strong>は、</p><p style="font-size: 14px; font-weight: 500;">&nbsp;人生を立て直すための一番シンプルな入口です。
+        </p>
+      </section>
+
+      <!-- 9. Offer Section -->
+      <section class="offer-section">
+        <h2 style="font-size: 18px;">
+          ここまで読んで「このままじゃ嫌だな」と
+          少しでも感じたなら。
+        </h2>
+        <h2>
+          <strong style="font-size: 18px;">その気持ちを、一度だけ言葉にしてみませんか。</strong>
+        </h2>
+        <div class="offer-box">
+          <p class="text-small mb-0">
+            無理に答えを出す必要はありません。<br>
+            いくつかの質問に答えるだけで十分です。
+          </p>
+        </div>
+      </section>
+
+      <!-- 10. CTA Section -->
+      <section class="cta-section">
+        <p class="cta-title" style="font-size: 18px;">あなたの正直な気持ちを聞かせてください</p>
+
+        <a href="https://line.me/R/ti/p/@421ekvbt?oat_content=url&amp;ts=06011957&amp;utm_source=ig&amp;utm_medium=social&amp;utm_content=link_in_bio&amp;fbclid=PAZnRzaAP951FleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAads0UipRuuDXM4VzcHQes2FOs5tX6HZkBSCE2Qjy1rq3hD_UbZfp78yq-1YBw_aem_-zkujB_8MZVGq23fQ7ivCg#~" class="btn-cta">LINEで続ける</a>
+
+        <p class="cta-sub">
+          ※タップすると公式LINEが開きます<br>
+          ※2~3分で完了します
+        </p>
+      </section>
+    </div>
+  
+
+</body></html>
